@@ -1,0 +1,31 @@
+{
+  "name": "mlbprobablepitchers",
+  "version": "0.0.0",
+  "description": "Get JSON object with MLB Probable Pitchers for a given day",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -m 9999 -v -L -t 100"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaw187/mlbprobablepitchers.git"
+  },
+  "keywords": [
+    "MLB",
+    "Probable",
+    "Pitchers"
+  ],
+  "author": "James Weston",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaw187/mlbprobablepitchers/issues"
+  },
+  "homepage": "https://github.com/jaw187/mlbprobablepitchers#readme",
+  "dependencies": {
+    "x-ray": "^2.0.3"
+  },
+  "devDependencies": {
+    "code": "^2.1.0",
+    "lab": "^10.0.0"
+  }
+}
