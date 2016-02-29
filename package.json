@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/jaw187/mlbprobablepitchers#readme",
   "dependencies": {
-    "x-ray": "^2.0.3"
+    "x-ray": "2.x.x"
   },
   "devDependencies": {
-    "code": "^2.1.0",
-    "lab": "^10.0.0"
+    "code": "2.x.x",
+    "lab": "10.x.x"
   }
 }
