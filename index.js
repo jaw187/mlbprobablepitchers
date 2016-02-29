@@ -17,7 +17,10 @@ internals.Probables.get = function (day, callback) {
     const selector = {
         pitchers: ['div.pitcher@pid'],
         teams: ['div.pitcher@tid'],
-        games: ['div.pitcher@gid']
+        games: ['div.pitcher@gid'],
+        startTimes: ['div.pitcher@local_time'],
+        easternTimes: ['div.pitcher@eastern_time'],
+        timezones: ['div.pitcher@local_time_zone']
     };
 
     const x = Xray();
@@ -39,12 +42,14 @@ internals.convertResult = function (result) {
 
     const pitchers = result.pitchers;
     const teams = result.teams;
-    const games = result.games;
 
     for (let i = 0; i < pitchers.length; i += 2) {
         const j = i + 1;
         const matchup = {
-            id: games[i],
+            id: result.games[i],
+            startTime: result.startTimes[i],
+            easternTime: result.easternTimes[i],
+            timezone: result.timezones[i],
             teams: {
                 away: teams[i],
                 home: teams[j]
