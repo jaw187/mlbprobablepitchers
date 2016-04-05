@@ -62,12 +62,12 @@ internals.convertResult = function (result) {
                 away: {
                     id: pitchers[i],
                     name: names[i],
-                    throws: handyness[i]
+                    throws: throws[i]
                 },
                 home: {
                     id: pitchers[j],
                     name: names[j],
-                    throws: handyness[j]
+                    throws: throws[j]
                 }
             }
         };
