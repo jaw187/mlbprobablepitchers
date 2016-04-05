@@ -16,6 +16,8 @@ internals.Probables.get = function (day, callback) {
     const scope = 'div#mc';
     const selector = {
         pitchers: ['div.pitcher@pid'],
+        names: ['div.pitcher h5 a'],
+        throws: ['div.pitcher h5 span'],
         teams: ['div.pitcher@tid'],
         games: ['div.pitcher@gid'],
         startTimes: ['div.pitcher@local_time'],
@@ -42,6 +44,8 @@ internals.convertResult = function (result) {
 
     const pitchers = result.pitchers;
     const teams = result.teams;
+    const names = result.names;
+    const throws = result.throws;
 
     for (let i = 0; i < pitchers.length; i += 2) {
         const j = i + 1;
@@ -55,8 +59,16 @@ internals.convertResult = function (result) {
                 home: teams[j]
             },
             pitchers: {
-                away: pitchers[i],
-                home: pitchers[j]
+                away: {
+                    id: pitchers[i],
+                    name: names[i],
+                    throws: handyness[i]
+                },
+                home: {
+                    id: pitchers[j],
+                    name: names[j],
+                    throws: handyness[j]
+                }
             }
         };
 
