@@ -55,7 +55,7 @@ class Probables {
         const pitcherIDs = result.pitchers.map((pitcher) => {
 
             const matches = pitcherIDInURL.exec(pitcher);
-            if ( matches.length !== 2 ) {
+            if (matches.length !== 2) {
                 throw `Unexpected URL format while trying to extract pitcher ID: ${pitcher}`;
             }
             return matches[1];
