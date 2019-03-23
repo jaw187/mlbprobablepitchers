@@ -11,22 +11,18 @@ describe('MLB Probable Pitchers', () => {
 
         Probables.get(day, (err, dailyMatchups) => {
 
-            try {
-                expect(err).to.not.exist();
-                expect(dailyMatchups).to.exist();
-                expect(dailyMatchups.length).to.equal(15);
-                expect(dailyMatchups[0].teams).to.exist();
-                expect(dailyMatchups[0].teams.away).to.equal('Astros');
-                expect(dailyMatchups[0].pitchers).to.exist();
-                expect(dailyMatchups[0].pitchers.away).to.exist();
-                expect(dailyMatchups[0].pitchers.away.id).to.equal('434643');
-                expect(dailyMatchups[0].pitchers.home).to.exist();
-                expect(dailyMatchups[0].pitchers.home.id).to.equal('448694');
-                done();
-            }
-            catch (err) {
-                return done(err);
-            }
+            expect(err).to.not.exist();
+            expect(dailyMatchups).to.exist();
+            expect(dailyMatchups.length).to.equal(15);
+            expect(dailyMatchups[0].teams).to.exist();
+            expect(dailyMatchups[0].teams.away).to.equal('Astros');
+            expect(dailyMatchups[0].pitchers).to.exist();
+            expect(dailyMatchups[0].pitchers.away).to.exist();
+            expect(dailyMatchups[0].pitchers.away.id).to.equal('434643');
+            expect(dailyMatchups[0].pitchers.home).to.exist();
+            expect(dailyMatchups[0].pitchers.home.id).to.equal('448694');
+            done();
+
         });
     });
 
@@ -55,13 +51,9 @@ describe('MLB Probable Pitchers', () => {
 
         Probables.get(day, (err, dailyMatchups) => {
 
-            try {
-                expect(err).to.exist();
-                done();
-            }
-            catch (err) {
-                return done(err);
-            }
+            expect(err).to.exist();
+            done();
+
         });
     });
 });
