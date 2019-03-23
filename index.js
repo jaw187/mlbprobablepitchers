@@ -3,11 +3,12 @@ const Xray = require('x-ray');
 
 class Probables {
     static get(dateString, callback) {
-        let dateComponents = dateString.split("-");
+
+        let dateComponents = dateString.split('-');
         if (dateComponents.length !== 3) {
-            dateComponents = dateString.split("/");
+            dateComponents = dateString.split('/');
             if (dateComponents.length !== 3) {
-                throw `Invalid date format. Use 'YYYY-MM-DD';`
+                throw `Invalid date format. Use 'YYYY-MM-DD'`;
             }
         }
         const year = dateComponents[0];
@@ -29,6 +30,7 @@ class Probables {
 
         const x = Xray();
         x(url, scope, selector)((err, result) => {
+
             if (err) {
                 return callback(err);
             }
@@ -38,8 +40,10 @@ class Probables {
     }
 
     static trimWhiteSpace(arr) {
-        return arr.map(elem => {
-            return elem.replace(/\s/g, "");
+
+        return arr.map((elem) => {
+
+            return elem.replace(/\s/g, '');
         });
     }
 
@@ -48,13 +52,14 @@ class Probables {
         const matchups = [];
 
         const pitcherIDInURL = /.*(\d{6}).*/;
-        const pitcherIDs = result.pitchers.map(pitcher => {
+        const pitcherIDs = result.pitchers.map((pitcher) => {
+
             const matches = pitcherIDInURL.exec(pitcher);
             if ( matches.length !== 2 ) {
                 throw `Unexpected URL format while trying to extract pitcher ID: ${pitcher}`;
             }
             return matches[1];
-        });;
+        });
         const teams = Probables.trimWhiteSpace(result.teams);
         const names = result.names;
         const throws = Probables.trimWhiteSpace(result.throws);
