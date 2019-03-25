@@ -1,6 +1,6 @@
 {
   "name": "mlbprobablepitchers",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Get JSON object with MLB Probable Pitchers for a given day",
   "main": "index.js",
   "scripts": {
