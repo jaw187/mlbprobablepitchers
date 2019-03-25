@@ -26,6 +26,9 @@
   },
   "devDependencies": {
     "code": "2.x.x",
-    "lab": "10.x.x"
+    "lab": "15.x.x"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
   }
 }
